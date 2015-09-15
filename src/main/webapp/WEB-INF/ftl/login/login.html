@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<title>Dax-登录</title>
+	<script src="http://yun.duiba.com.cn/assets/js/jquery-1.6.4.min.js" type="text/javascript"></script>
+	<script src="http://yun.duiba.com.cn/js/security.js" type="text/javascript"></script>
+	<style>
+		.register-line {margin-top: 20px;}
+	</style>
+	<style type="text/css">
+	@charset "utf-8";
+/* CSS Document */
+* {
+	margin: 0px;
+	padding: 0px;
+	-webkit-box-sizing: border-box;
+  	-moz-box-sizing: border-box;
+ 	box-sizing: border-box;
+}
+html {
+  font-family: sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+body {
+	background-color: #fbfbfb;
+	font-family: "Microsoft Yahei", Helvetica, Arial, sans-serif;
+}
+a {
+	text-decoration: none;
+	color: #2ab6b0;
+}
+img{ vertical-align:middle}
+::-webkit-input-placeholder { /* WebKit browsers */
+ color:#ccc;
+ font-size:16px;
+ font-family:"Microsoft Yahei", Helvetica, Arial, sans-serif;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+ color:#ccc;
+ font-size:16px;
+ font-family:"Microsoft Yahei", Helvetica, Arial, sans-serif;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+ color:#ccc;
+ font-size:16px;
+ font-family:"Microsoft Yahei", Helvetica, Arial, sans-serif;
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+ color:#ccc;
+ font-size:16px;
+ font-family:"Microsoft Yahei", Helvetica, Arial, sans-serif;
+}
+button {
+	border: none;
+	cursor: pointer;
+}
+button[disabled]{ cursor:default;}
+input, button, select, textarea {
+	font-family:"Microsoft Yahei", Helvetica, Arial, sans-serif;
+	outline: none;
+}
+/*处理chrome黄色背景问题*/
+input:-webkit-autofill{
+	-webkit-box-shadow: 0 0 0px 1000px white inset; 
+}
+.form-group::after,.form::after {
+	content: '';
+	display: table;
+	clear: both;
+}
+.primary {
+	color: #2ab6b0;
+}
+.register-banner {
+	width: 100%;
+}
+.form {
+	margin: 0px auto;
+	margin-top: 30px;
+	width: 435px;
+}
+.form-group {
+	margin-bottom: 20px;
+}
+.iconInput {
+	position: relative;
+}
+.iconInput.left input {
+	padding-left: 50px;
+}
+.inputIcon {
+	display: block;
+	position: absolute;
+	left: 15px;
+	top: 10px;
+	width: 22px;
+	height: 22px;
+}
+.inputIcon.mail {
+	background: url(https://duiba-files.b0.upaiyun.com/img/register-icons.png) -33px -24px;
+}
+.inputIcon.pwd {
+	background: url(https://duiba-files.b0.upaiyun.com/img/register-icons.png) -33px -60px;
+}
+.inputIcon.pwd2 {
+	background: url(https://duiba-files.b0.upaiyun.com/img/register-icons.png) -33px -206px;
+}
+.inputIcon.person {
+	background: url(https://duiba-files.b0.upaiyun.com/img/register-icons.png) -33px -96px;
+}
+.inputIcon.tel {
+	background: url(https://duiba-files.b0.upaiyun.com/img/register-icons.png) -33px -132px;
+}
+.inputIcon.net {
+	background: url(https://duiba-files.b0.upaiyun.com/img/register-icons.png) -33px -168px;
+}
+.SMS{
+	background: url(https://duiba-files.b0.upaiyun.com/img/register-icons.png) -33px -243px;
+}
+.w265{width: 265px !important;}
+.fl{float:left;}
+.verification.pass{
+	width:155px;
+	height: 43px;
+	float:left;
+	margin-left: 13px;
+	border-radius: 3px;
+	background: #29b6b0;
+	color:#fff;
+	border:none;
+	display: inline-block;
+	text-align: center;
+	line-height: 43px;
+	cursor: pointer;
+}
+.verification.lose{
+	width:155px;
+	height: 43px;
+	float:left;
+	margin-left: 13px;
+	border-radius: 3px;
+	background: #ccc;
+	color:#fff;
+	border:none;
+	display: inline-block;
+	text-align: center;
+	line-height: 43px;
+	
+	cursor:default;
+}
+.register-title {
+	font-size: 22px;
+	color: #444;
+	text-align: center;
+	margin-bottom: 20px;
+}
+.form-control {
+	padding: 10px 0px;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	font-size: 16px;
+	color: #333;
+	width: 100%;
+	transition: border-color ease-in-out .3s;
+	-moz-transition: border-color ease-in-out .3s;
+	-webkit-transition: border-color ease-in-out .3s;
+}
+.form-control:focus {
+	border-color: #2ab6b0;
+}
+.checkbox {
+	font-size: 16px;
+	color: #666;
+	background: url(https://duiba-files.b0.upaiyun.com/assets/images/fabuing1.png) left -1px no-repeat;
+	padding-left: 30px;
+	display: block;
+	float: left;
+	overflow: hidden;
+	cursor: pointer;
+}
+.checkbox-on {
+	background-image: url(https://duiba-files.b0.upaiyun.com/assets/images/fabuing2.png);
+}
+.register-btn {
+	display:inline-block;
+	text-align:center;
+	width: 100%;
+	font-size: 20px;
+	letter-spacing:0.5em;
+	color: #fff;
+	padding: 10px 0px;
+	border: none;
+	background-color: #2ab6b0;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	box-shadow: 0 2px #048882;
+	-moz-box-shadow: 0 2px #048882;
+	-webkit-box-shadow: 0 2px #048882;
+	transition: border-color ease-in-out .15s,background-color ease-in-out .15s, box-shadow ease-in-out .15s;
+	-moz-transition: border-color ease-in-out .15s,background-color ease-in-out .15s, box-shadow ease-in-out .15s;
+	-webkit-transition: border-color ease-in-out .15s,background-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+.register-btn[disabled]{background-color: #bec3c7;box-shadow: 0 2px #9c9c9c;
+	-moz-box-shadow: 0 2px #9c9c9c;
+	-webkit-box-shadow: 0 2px #9c9c9c;}
+.register-btn:active{ background-color:#199892;box-shadow:none;}
+input.error { border: 1px solid #cc0000; border-top-right-radius:0px; background:url(https://duiba-files.b0.upaiyun.com/img/vaild.png) no-repeat 400px -30px; }
+input.valid { border: 1px solid #ccc; border-top-right-radius:0px; background:url(https://duiba-files.b0.upaiyun.com/img/vaild.png) no-repeat 400px 10px; }
+label.error {
+	height:19px;
+font-size:14px;
+color:#fff;
+background: #c00;
+padding: 0px 15px;
+position: absolute;
+top: -19px;
+right: 0px;
+display: block;
+border-top-left-radius:3px;
+border-top-right-radius:3px;
+width: auto;
+margin-right: 0px;
+}
+.register-line{ margin-top:40px; background:url(https://duiba-files.b0.upaiyun.com/img/register-line.png) no-repeat; background-position:top center; height:1px;}
+.register-footer{margin:20px auto;width: 435px;}
+.register-footer::after{ content:''; display:table; clear:both;}
+.to-login{text-align:center; color:#666;}
+.warning {
+background: #FFC;
+border: 1px solid #F90;
+padding: 5px 10px;
+color: #C00;
+-webkit-border-radius: 3px;
+-moz-border-radius: 3px;
+border-radius: 3px;
+}
+.text-right{ text-align:right;}
+.text-center{ text-align:center;}
+.return-login{ float:left;}
+.no-account{ float:right;}
+.toMyEmail{ font-size:20px;}
+	</style>
+</head>
+<body>
+<section><a href="/"><img class="register-banner" src="../images/3.png" ></a>
+  <section class="form">
+    <p class="register-title">登录</p>
+    <form id="register-form" action="/login/doLogin.do" target="_self" method="post" onsubmit="return loginValidate()">
+      	<input type="hidden" id="loginToken" name="loginToken" value="e2b481fe-c1ae-40df-ad07-58cbb8438a26"/>
+      	<input type="hidden" id="redirectUrl" name="redirectUrl" value=""/>
+		<div class="form-group">
+	    
+    </div>
+      <div class="form-group">
+        <div class="iconInput left"> <i class="inputIcon mail"></i>
+          <input class="form-control" id="email" name="email" type="text"   placeholder="登录用的邮箱地址，请确保可用" value="">
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="iconInput left"> <i class="inputIcon pwd"></i>
+          <input class="form-control" id="password" name="password" type="password"   placeholder="你的密码，大于6位且包含字母和数字">
+        </div>
+      </div>
+      <div class="form-group text-right">
+        <label class="checkbox">记住账号</label>
+        <input class="remember" type="hidden" value="0">
+        <a class="primary" href="http://www.duiba.com.cn:80/login/forgetpassword">忘记密码？</a>
+      </div>
+      <div class="form-group">
+        <button class="register-btn">登录</button>
+      </div>
+    </form>
+  </section>
+  <div class="register-line"></div>
+  <footer class="register-footer">
+  	<p class="to-login">没有账号，<a class="primary" href="/signup">马上注册！</a></p>
+  </footer>
+</section>
+</body>
+<script src="http://yun.duiba.com.cn/js/jquery.validate.min.js" type="text/javascript"></script>
+<script>
+//Jquery cookie插件
+jQuery.cookie = function(name, value, options) {
+if (typeof value != 'undefined') {
+	options = options || {};
+	if (value === null) {
+		value = '';
+		options = $.extend({},
+		options);
+		options.expires = -1;
+	}
+	var expires = '';
+	if (options.expires && (typeof options.expires == 'number' || options.expires.toUTCString)) {
+		var date;
+		if (typeof options.expires == 'number') {
+			date = new Date();
+			date.setTime(date.getTime() + (options.expires * 24 * 60 * 60 * 1000));
+		} else {
+			date = options.expires;
+		}
+		expires = '; expires=' + date.toUTCString();
+	}
+	var path = options.path ? '; path=' + (options.path) : '';
+	var domain = options.domain ? '; domain=' + (options.domain) : '';
+	var secure = options.secure ? '; secure': '';
+	document.cookie = [name, '=', encodeURIComponent(value), expires, path, domain, secure].join('');
+	} else {
+		var cookieValue = null;
+		if (document.cookie && document.cookie != '') {
+			var cookies = document.cookie.split(';');
+			for (var i = 0; i < cookies.length; i++) {
+				var cookie = jQuery.trim(cookies[i]);
+				if (cookie.substring(0, name.length + 1) == (name + '=')) {
+					cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+					break;
+				}
+			}
+		}
+		return cookieValue;
+	}
+};
+$(function(){
+	$('.form-control').focus(function(){
+		$(this).prevAll('.inputIcon').css('background-position-x','-77px');	
+	}).blur(function(){
+		$(this).prevAll('.inputIcon').css('background-position-x','-33px');
+	})	
+	//是否记住账号
+	$('.checkbox').click(function(){
+		if($(this).hasClass('checkbox-on')){
+			$(this).removeClass('checkbox-on');
+			$(this).next('input').val('0');
+		}else{
+			$(this).addClass('checkbox-on');
+			$(this).next('input').val('1');
+		}
+	})
+	//邮箱REG
+	jQuery.validator.addMethod("newEmail", function(value, element) {
+		var newEmail =  /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+		return this.optional(element) || (newEmail.test(value))
+	})
+	jQuery.extend(jQuery.validator.messages, {
+		required: "此项不能为空",
+	});
+	//验证
+	$('#register-form').validate({
+		rules:{
+			email:{
+				required:true,
+				newEmail:true
+			},
+			password:{
+				required:true,
+			}
+		},
+		messages:{
+			email:{
+				newEmail:"请输入正确格式的电子邮件"
+			}
+		}
+	})
+	//检查账号COOKIE
+	var account=$.cookie("account");
+	var remember=$.cookie("remember");
+	if(!account){
+		$.cookie('account', '', {expires: 7,path:"/"});
+	}else{
+		$('#email').val(account);		
+	}
+	if(!remember){
+		$('.checkbox').addClass('checkbox-on');	
+		$('.remember').val('1');
+	}else{
+		if(remember=='1'){
+			$('.checkbox').addClass('checkbox-on');	
+			$('.remember').val('1');	
+		}
+	}
+	//记住账号
+	$('#register-form').submit(function(){
+		var remember=$('.remember').val();
+		var account=$('#email').val();
+		if(remember=="1"){
+			$.cookie("remember","1",{expires:7,path:"/"});
+			$.cookie("account",account,{expires:7,path:"/"});	
+		}
+		else{
+			$.cookie("remember","0",{expires:7,path:"/"});
+			$.cookie("account","",{expires:7,path:"/"});	
+		}
+	})
+})
+
+function loginValidate(){
+	try {
+		//密码加密
+		if($("#password").val()!=""){
+			$("#password").val($.duiba_md5($.duiba_b64_sha($("#password").val())+$("#loginToken").val()));
+		}		
+		return true;
+	} catch (e) {
+		console.log(e);
+		return false;
+	}
+}
+
+</script>
+</html>

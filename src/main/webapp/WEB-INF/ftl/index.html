@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html> 
+	<head>  
+		<meta charset="utf-8" />    
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+		<title>DaX</title> 
+		<link type="text/css" rel="stylesheet" href="./../stylesheets/reset.css"></link>
+		<link type="text/css" rel="stylesheet" href="./../stylesheets/common.css"></link>
+		<link type="text/css" rel="stylesheet" href="./../stylesheets/zxx.lib.css"></link>
+		<link type="text/css" rel="stylesheet" href="./../lib/jscrollpane/jquery.jscrollpane.css"></link>
+		<link rel="stylesheet" href="./../stylesheets/fromone.css"></link>
+		<script src="./../lib/react.js"></script>
+		<script src="./../lib/jquery-1.10.2.min.js"></script>
+		<script src="./../lib/jscrollpane/jquery.mousewheel.js"></script>
+		<script src="./../lib/jscrollpane/mwheelIntent.js"></script>
+		<script src="./../lib/jscrollpane/jquery.jscrollpane.min.js"></script>
+		<script src="./../lib/lodash.min.js"></script>	
+		<script src="./../map_post.js"></script>	
+		<script src="./../lib/fromreact.js"></script>	
+		<script src="./../lib/fromone.debug.js"></script>	
+	</head>
+	
+		<!-- main-screen -->
+			<body class="index" data-model="index" data-level="1" data-type="bottom" data-url="index"><div id="bottom" style="display:block;">
+	<div class="index-area" data-screen="bottom">  
+		<header class="index-header">
+	<div class="index-logo" click-target="change-btn">from one <aside></aside></div>
+	<div class="index-nav index-nav-00" click-target="change-btn">首页</div>
+	<div class="index-nav index-nav-01">js</div>
+	<div class="index-nav index-nav-02" click-target="change-btn" data-level="1" data-type="bottom" data-model="css" data-url="css">css</div>
+	<div class="index-nav index-nav-03" click-target="change-btn" data-level="1" data-type="top" data-model="essay" data-url="essay">随笔</div>
+	<div class="index-nav index-nav-04" click-target="change-btn" data-level="1" data-type="bottom" data-model="phrase" data-url="phrase">短语</div>
+	<div class="index-nav index-nav-05">相册</div> 
+	<div class="index-nav index-nav-06" click-target="change-btn" data-level="1" data-type="bottom" data-model="about" data-url="about">about</div>
+</header> 
+		<div class="label-area"> 
+	 		<a class="label-box label-box-4"> 
+				<aside>  
+					<p class="label-title">Welcome to my Blog</p>
+					<p>这里没有跳转，没有滚动条，没有一切我讨厌的东西</p>
+					<p>一切依照我的喜好所建</p> 
+					<p>这里有我的积累，我的沉淀，希望你会喜欢这里</p>
+				</aside>
+			</a> 
+			<a class="label-box label-item label-item-1" href="http://yansm.github.io/fromzero/">
+				<aside>
+					<p>我的个人主页</p>
+					<p>fromzero</p> 
+				</aside>
+				<div class="label-icon"><div class="from-icon"></div></div>
+			</a>
+			<a class="label-box "><img src="./../images/index-label-4.jpg"></a>
+			<a class="label-box "><img src="./../images/index-label-1.jpg"></a>
+			<a class="label-box label-item label-item-3"> 
+				<aside>
+					<p>css3做的图标</p>
+					<p>fromicons</p>
+					<p>可缩放，可换色</p>
+				</aside>
+				<div class="label-icon"><div class="from-icon"></div></div> 
+			</a>
+			<a class="label-box label-item label-item-2" href="http://www.gbtags.com/gb/site/formzero.htm">
+				<aside>
+					<p>我的gbtags主页</p>
+					<p>依旧沉睡</p>
+				</aside>
+				<div class="label-icon"><div class="from-icon"></div></div>
+			</a>
+			<a class="label-box "><img src="./../images/index-label-2.jpg"></a>
+			<a class="label-box "><img src="./../images/index-label-3.jpg"></a>
+			<a class="label-box label-item label-item-5" click-target="page-btn" data-model="index-page" data-url="post/index/label">
+				<aside>
+					<p>前往留言墙</p>
+					<p>留下些足迹和建议吧</p>
+				</aside>
+				<div class="label-icon"><div class="from-icon"></div></div>
+			</a>
+			<a class="label-box"></a>
+			<a class="label-box"></a>
+			<a class="label-box "><img src="./../images/index-label-5.jpg"></a>
+			<a class="label-box label-item label-item-4" href="http://yansm.github.io/fromzero/?menuIndex=1">
+				<aside>
+					<p>附上个人简历~</p>
+				</aside>
+				<div class="label-icon"><div class="from-icon"></div></div>
+			</a> 
+			<a class="label-box label-item label-item-6" href="https://github.com/yansm/fromone">
+				<aside>
+					<p>这里下载源码</p>
+					<p>by github</p>
+					<p>记得给星哦~</p>
+				</aside>
+				<div class="label-icon"><div class="from-icon"></div></div>
+			</a>
+			<a class="label-box"></a>
+		</div>
+	</div>     
+</div>         
+		<ul class="full-screen">
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+		<div class="loading-area">
+			<div class="spinner">
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>	
+				<div></div>
+				<div></div>
+				<aside>loading</aside>
+			</div>
+		</div>
+		<div class="modal-area">
+			<div class="modal-box">
+			     <!-- <iframe src="https://changyan.sohu.com/api/oauth2/authorize?client_id=cyrCA2YHb&redirect_uri=http://yansm.github.io/fromone/checkOAUTH.html&response_type=code&platform_id=3"> -->
+			</div>
+		</div>
+	</body>
+	
+</html>
+    
