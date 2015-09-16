@@ -3,6 +3,7 @@ package com.personal.controller;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -17,17 +18,16 @@ import com.personal.service.UserAccountService;
 public class RegisterController {
 
 	@Autowired 
-	private UserAccountService userAccountService;
+	private UserAccountService userProfileService;
 	
-	@RequestMapping(value = "/doRegister/", method = RequestMethod.POST)
-	public String doRegister(HttpServletRequest request,
+	@RequestMapping(method = RequestMethod.POST)
+	public String postRegister(HttpServletRequest request,
 			HttpServletResponse response, ModelMap model, UserAccount account) {
-		if (account.getEmail() != null && account.getPassword() != null
-				&& account.getName() != null) {
+		if (StringUtils.isEmpty(account.getAccount())) {
 			return null;
 		}
-		account.setStatus(UserAccount.STATUS_NOT_ACTIVATED);
-		userAccountService.insert(account);
+//		account.setStatus(UserAccount.STATUS_NOT_ACTIVATED);
+//		userAccountService.insert(account);
 		return "register/email";
 	}
 

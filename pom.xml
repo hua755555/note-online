@@ -130,7 +130,28 @@
 		<artifactId>freemarker</artifactId>
 		<version>2.3.20</version>
 	</dependency>
-		
+	
+	<!-- util 依赖包 -->
+	<dependency>
+		<groupId>com.google.guava</groupId>
+		<artifactId>guava</artifactId>
+		<version>12.0</version>
+	</dependency>
+	<dependency>
+			<groupId>commons-lang</groupId>
+			<artifactId>commons-lang</artifactId>
+			<version>2.5</version>
+		</dependency>
+		<dependency>
+			<groupId>com.daoman</groupId>
+			<artifactId>parox-sso</artifactId>
+			<version>1.0.5</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-codec</groupId>
+			<artifactId>commons-codec</artifactId>
+			<version>1.9</version>
+		</dependency>
 	</dependencies>
 
 	<build>
@@ -143,12 +164,12 @@
 					<path>/</path>
 				</configuration>
 			</plugin>
-			<!-- 1.3不支持泛型,改为1.5 -->
+			<!-- 此插件对应jdk版本 -->
 			<plugin>
 	           <artifactId>maven-compiler-plugin</artifactId>
 	           <configuration>
-	               <target>1.5</target>
-	               <source>1.5</source>
+	               <target>1.7</target>
+	               <source>1.7</source>
 	               <encoding>UTF-8</encoding>
 	           </configuration>
 	       </plugin>

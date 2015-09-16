@@ -1,11 +1,9 @@
 package com.personal.model;
 
-import java.io.Serializable;
-
 import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class UserAccount implements  Serializable{
+public class UserAccount extends  BaseDomain{
 	
 	
 	/**
@@ -13,44 +11,51 @@ public class UserAccount implements  Serializable{
 	 */
 	private static final long serialVersionUID = 8298270604938901589L;
 	
-	private Long id;
+	private Long uid;
 	
-	private String name;
+	private String account;
 	
-	private String email;
+	private Integer accountType;
 	
 	private String password;
 	
-	private int emailVerify;
+	private int isVerified;
 	
-	private int status;
-	
-	public final static int STATUS_NOT_ACTIVATED = 0;
-	
-	public final static int STATUS_NORMAL = 1;
-	
-	public Long getId() {
-		return id;
+	public final static int ACCOUNT_TYPE_EMAIL=0;
+	public final static int ACCOUNT_TYPE_MOBILE=1;
+	public final static int IS_VERIFIED_DEFAULT=0;
+	public final static int IS_VERIFIED_TRUE=1;
+
+	public Long getUid() {
+		return uid;
 	}
 
-	public void setId(Long id) {
-		this.id = id;
+	public void setUid(Long uid) {
+		this.uid = uid;
 	}
 
-	public String getName() {
-		return name;
+	public String getAccount() {
+		return account;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setAccount(String account) {
+		this.account = account;
 	}
 
-	public String getEmail() {
-		return email;
+	public Integer getAccountType() {
+		return accountType;
 	}
 
-	public void setEmail(String email) {
-		this.email = email;
+	public void setAccountType(Integer accountType) {
+		this.accountType = accountType;
+	}
+
+	public int getIsVerified() {
+		return isVerified;
+	}
+
+	public void setIsVerified(int isVerified) {
+		this.isVerified = isVerified;
 	}
 
 	public String getPassword() {
@@ -61,19 +66,4 @@ public class UserAccount implements  Serializable{
 		this.password = password;
 	}
 
-	public int getEmailVerify() {
-		return emailVerify;
-	}
-
-	public void setEmailVerify(int emailVerify) {
-		this.emailVerify = emailVerify;
-	}
-
-	public int getStatus() {
-		return status;
-	}
-
-	public void setStatus(int status) {
-		this.status = status;
-	}
 }

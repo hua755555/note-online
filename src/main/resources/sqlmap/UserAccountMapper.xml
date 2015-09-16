@@ -4,84 +4,44 @@
 <mapper namespace="com.personal.dao.UserAccountDao" >
 	
 	<sql id="default_column">
-		`b_user`.`id`,
-		`b_user`.`name`,
-		`b_user`.`email`,
-		`b_user`.`password`,
-		`b_user`.`email_verify` as `emailVerify`,
-		`b_user`.`status`
-	</sql>
-<!-- 	
-	<insert id="insert" parameterType="com.church.model.UserModel" keyProperty="id">
-		insert into b_user (
-			`name`,
-			`password`,
-			`phone`,
-			`role`,
-			`is_verify`,
-			`is_disable`,
-			`gmt_create`,
-			`gmt_modify`)
-		values(#{name},
-			#{password},
-			#{phone},
-			#{role},
-			#{isVerify},
-			#{isDisable},
+	 `user_account`.`id`,
+    `user_account`.`account`,
+    `user_account`.`account_type` as accountType,
+    `user_account`.`is_verified` as isVerified,
+    `user_account`.`uid`,
+    `user_account`.`password`,
+    `user_account`.`gmt_created` as gmtCreated,
+    `user_account`.`gmt_modified` as gmtModified
+    </sql>
+	<insert id="insert" parameterType="com.personal.model.UserAccountModel" keyProperty="id">
+		insert into user_account (
+		    `account`,
+		    `account_type`,
+		    `is_verified`,
+		    `uid`,
+		    `password`,
+		    `gmt_created`,
+		    `gmt_modified`)
+		values(
+		    #{account},
+		    #{accountType},
+		    #{isVerified},
+		    #{uid},
+		    #{password},
 			now(),now())
 	</insert>
-	
-	<select id="queryOne" resultType="com.church.model.UserModel">
+	<select id="queryOneByAccount" resultType="com.personal.model.UserAccount">
 		select 
 			<include refid="default_column"/>
-		from b_user
-		where id = #{id}
+		from user_account
+		where account=#{account} 
+		<if test="accountType != null">and account_type=#{accountType}</if>
+		<if test="isVerified != null" > and is_verified = #{isVerified}</if>
 	</select>
 	
-	<select id="queryByPhone" resultType="com.church.model.UserModel">
-		select 
-			<include refid="default_column"/>
-		from b_user
-		where phone = #{phone}
-	</select>
-	
-	<select id="queryByName" resultType="com.church.model.UserModel">
-		select 
-			<include refid="default_column"/>
-		from b_user
-		where name = #{name}
-	</select>
-	
-	<select id="countExist" resultType="java.lang.Integer">
-		select count(*) 
-		from b_user
-		where id = #{uid}
-		and role = #{role}
-	</select>
-	
-	<update id="update" parameterType="com.church.model.UserModel">
-		update b_user set
-			<if test="name != null and name != '' ">
-				name = #{name},
-			</if>
-			<if test="phone != null and phone != '' ">
-				phone = #{phone},
-			</if>
-			gmt_modified=now()
-			where id = #{id}
-	</update>
-	
-	<update id="updatePassword"  parameterType="com.church.model.UserModel">
-		update b_user set
-			password = #{password},
-			gmt_modified = now()
-		where id = #{id}
-	</update> -->
-		<select id="queryOneByAccount" parameterType="com.personal.model.UserAccount" resultType="com.personal.model.UserAccount">
-		select 
-			<include refid="default_column"/>
-		from b_user
-		where email = #{email} and password = #{password}
-		and status =1
+	<select id="countExist" parameterType="com.personal.model.UserAccount" resultType="java.lang.Integer">
+		select count(*) as c
+		from user_account
+		where account=#{account}
 	</select>
 </mapper>
