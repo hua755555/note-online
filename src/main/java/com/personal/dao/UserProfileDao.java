@@ -5,7 +5,7 @@ import com.personal.model.UserProfileModel;
 
 public interface UserProfileDao {
 
-	public UserProfile insert(UserProfile user);
+	public Integer insert(UserProfile user);
 
 	public UserProfileModel queryModel(Long uid);
 

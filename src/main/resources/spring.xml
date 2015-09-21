@@ -9,8 +9,12 @@ http://www.springframework.org/schema/context/spring-context-3.0.xsd
 	<!-- 引入属性文件 -->
 	<context:property-placeholder location="classpath:config.properties" />
 
+	 <!--密码加密器-->
+	<bean id="pwdEncoder" class="com.personal.util.security.Md5PwdEncoder">
+		<property name="defaultSalt" value="personal"/>
+	</bean>
 	<!-- 自动扫描(自动注入) -->
 	<context:component-scan base-package="com.personal.service" />
-
+	<context:component-scan base-package="com.personal.config" />
 
 </beans>

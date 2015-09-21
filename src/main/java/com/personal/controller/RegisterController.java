@@ -1,34 +1,40 @@
 package com.personal.controller;
 
+import java.io.IOException;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.personal.model.UserAccount;
-import com.personal.service.UserAccountService;
+import com.personal.model.UserAccountModel;
+import com.personal.model.UserProfileModel;
+import com.personal.service.UserProfileService;
+import com.personal.util.exception.ServiceException;
 
 @Controller
 @RequestMapping("/register")
-public class RegisterController {
+public class RegisterController extends BaseController{
 
 	@Autowired 
-	private UserAccountService userProfileService;
+	private UserProfileService userProfileService;
 	
 	@RequestMapping(method = RequestMethod.POST)
-	public String postRegister(HttpServletRequest request,
-			HttpServletResponse response, ModelMap model, UserAccount account) {
-		if (StringUtils.isEmpty(account.getAccount())) {
-			return null;
+	public String postRegist(HttpServletRequest request,
+			HttpServletResponse response, ModelMap model, UserAccountModel account) throws IOException {
+		try {
+			UserProfileModel profile = userProfileService.doRegist(account);
+			if(profile.getId() !=null && profile.getId().longValue() >0){
+				return "login/dashbord";
+			}
+		} catch (ServiceException e) {
+			sendError(request, response, e.getMessage());
 		}
-//		account.setStatus(UserAccount.STATUS_NOT_ACTIVATED);
-//		userAccountService.insert(account);
-		return "register/email";
+		return "register/index";
 	}
 
 	@RequestMapping(method = RequestMethod.GET)

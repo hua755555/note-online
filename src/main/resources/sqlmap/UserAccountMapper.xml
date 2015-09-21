@@ -16,16 +16,16 @@
 	<insert id="insert" parameterType="com.personal.model.UserAccountModel" keyProperty="id">
 		insert into user_account (
 		    `account`,
-		    `account_type`,
-		    `is_verified`,
+		   <if test="accountType !=null"> `account_type`,</if>
+		    <if test="isVerified != null">`is_verified`,</if>
 		    `uid`,
 		    `password`,
 		    `gmt_created`,
 		    `gmt_modified`)
 		values(
 		    #{account},
-		    #{accountType},
-		    #{isVerified},
+		    <if test="accountType !=null">#{accountType},</if>
+		    <if test="isVerified != null">#{isVerified},</if>
 		    #{uid},
 		    #{password},
 			now(),now())

@@ -13,10 +13,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.personal.model.UserAccountModel;
-import com.personal.model.UserProfileModel;
 import com.personal.service.UserAccountService;
 import com.personal.service.UserProfileService;
-import com.personal.util.exception.ServiceException;
 
 @Controller
 @RequestMapping("/login")
@@ -48,15 +46,4 @@ public class LoginController extends BaseController{
 		return null;
 	}
 	
-	@RequestMapping(method = RequestMethod.POST)
-	public String postRegist(HttpServletRequest request,
-			HttpServletResponse response, ModelMap model, UserAccountModel account) throws IOException {
-		try {
-			userProfileService.doRegist(account);
-		} catch (ServiceException e) {
-			sendError(request, response, e.getMessage());
-		}
-		return "register/email";
-	}
-
 }

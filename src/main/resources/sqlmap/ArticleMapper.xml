@@ -20,10 +20,10 @@
 		insert into article (
 			    `title`,
 			    `content`,
-			    `status`,
+			    <if test="status !=null">`status`,</if>
 			    `count`,
 			    `type`,
-			    `label_id`,
+			    <if test="labelId !=null ">`label_id`,</if>
 			    `uid`,
 			    `stars`,
 			    `gmt_created`,

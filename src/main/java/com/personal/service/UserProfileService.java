@@ -12,5 +12,5 @@ public interface UserProfileService {
 
 	public UserProfileModel queryModel(Long uid) throws ServiceException;
 
-	public void doRegist(UserAccountModel account) throws ServiceException;
+	public UserProfileModel doRegist(UserAccountModel account) throws ServiceException;
 }

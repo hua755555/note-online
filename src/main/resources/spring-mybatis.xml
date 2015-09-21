@@ -56,12 +56,11 @@
 		<property name="filters" value="mergeStat" />
 	</bean>
 
-	<!-- myBatis文件 -->
-	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
-		<property name="dataSource" ref="dataSource" />
-		<!-- 自动扫描entity目录, 省掉Configuration.xml里的手工配置 -->
-		<property name="mapperLocations" value="classpath:sqlmap/*.xml" />
-	</bean>
+	<!-- MyBatis sqlSessionFactory -->
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+            <property name="configLocation" value="classpath:sql-map-config.xml" />
+            <property name="dataSource" ref="dataSource" />
+    </bean>
 
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
 		<property name="basePackage" value="com.personal.dao" />
