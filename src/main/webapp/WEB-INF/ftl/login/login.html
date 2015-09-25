@@ -250,7 +250,7 @@ border-radius: 3px;
 <section><a href="/"><img class="register-banner" src="../images/3.png" ></a>
   <section class="form">
     <p class="register-title">登录</p>
-    <form id="register-form" action="/login/doLogin.do" target="_self" method="post" onsubmit="return loginValidate()">
+    <form id="register-form" action="/login/login.do" target="_self" method="post" onsubmit="return loginValidate()">
       	<input type="hidden" id="loginToken" name="loginToken" value="e2b481fe-c1ae-40df-ad07-58cbb8438a26"/>
       	<input type="hidden" id="redirectUrl" name="redirectUrl" value=""/>
 		<div class="form-group">
@@ -258,7 +258,7 @@ border-radius: 3px;
     </div>
       <div class="form-group">
         <div class="iconInput left"> <i class="inputIcon mail"></i>
-          <input class="form-control" id="email" name="email" type="text"   placeholder="登录用的邮箱地址，请确保可用" value="">
+          <input class="form-control" id="email" name="account" type="text"   placeholder="登录用的邮箱地址，请确保可用" value="">
         </div>
       </div>
       <div class="form-group">

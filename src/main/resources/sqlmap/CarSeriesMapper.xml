@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.personal.dao.CarSeriesDao" >
+	
+	<sql id="default_column">
+    `car_series`.`id`,
+    `car_series`.`name`,
+    `car_series`.`firstletter`,
+    `car_series`.`seriesstate`,
+    `car_series`.`seriesorder`,
+    `car_series`.`gmt_created` as gmtCreated,
+    `car_series`.`gmt_modified` as gmtModified
+    </sql>
+	<insert id="insert" parameterType="com.personal.model.other.CarBrand" keyProperty="id">
+		insert into car_series (
+				`id`,
+			    `name`,
+			    `firstletter`,
+			    `seriesstate`,
+			    `seriesorder`,
+			    `gmt_created`,
+			    `gmt_modified`)
+		values(
+		       #{id},
+			    #{name},
+			    #{firstletter},
+			    #{seriesstate},
+			    #{seriesorder},
+			    now(),now())
+	</insert>
+	
+</mapper>

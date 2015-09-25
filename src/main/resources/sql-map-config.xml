@@ -17,6 +17,7 @@ PUBLIC "-//ibatis.apache.org//DTD Config 3.0//EN"
 		<mapper resource="sqlmap/ArticleMapper.xml"/>
  		<mapper resource="sqlmap/UserAccountMapper.xml"/>
 		<mapper resource="sqlmap/UserProfileMapper.xml"/>
+		<mapper resource="sqlmap/CarBrandMapper.xml"/>
 	</mappers>
 
 </configuration>
