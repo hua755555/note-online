@@ -8,6 +8,7 @@ import java.net.URL;
 import java.net.URLConnection;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -20,6 +21,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 import com.personal.model.other.CarBrand;
 import com.personal.model.other.CarSeries;
 import com.personal.service.CarBrandService;
@@ -125,8 +128,11 @@ public class CarController extends BaseController{
 		String str =HttpRequestUtil.httpGet("http://www.autohome.com.cn/ashx/AjaxIndexCarFind.ashx?type=3&value="+id,"gbk");
 //		String str1="[{"id":179,"name":"ALFA 156","firstletter":"A","seriesstate":40,"seriesorder":16},{"id":401,"name":"ALFA GT","firstletter":"A","seriesstate":40,"seriesorder":21}]'';
 		System.out.println(str);
-		JSONArray.parseArray(str, HashMap.class);
-		
+//		JSONArray.parseArray(str, HashMap.class);
+		Gson gson  = new Gson();
+		Map<String, Object> map = gson.fromJson(str, new TypeToken<Map<String, Object>>() {}.getType());   
+		map.get("result").get("factoryitems");
+//		List<CarSeries> carSeries = 
 //		JSONObject data=JSONObject.parseObject(str);
 //		data.getString("message");
 //		
