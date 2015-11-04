@@ -7,7 +7,7 @@ public class CarSeries extends BaseDomain{
 	
 	private String name; //系列名
 	private String firstletter;//2级车名首字母
-	private Long bId;
+	private Long factoryId;
 	private Long seriesstate;
 	private Long seriesorder;
 	
@@ -23,12 +23,6 @@ public class CarSeries extends BaseDomain{
 	public void setFirstletter(String firstletter) {
 		this.firstletter = firstletter;
 	}
-	public Long getbId() {
-		return bId;
-	}
-	public void setbId(Long bId) {
-		this.bId = bId;
-	}
 	public Long getSeriesstate() {
 		return seriesstate;
 	}
@@ -40,6 +34,12 @@ public class CarSeries extends BaseDomain{
 	}
 	public void setSeriesorder(Long seriesorder) {
 		this.seriesorder = seriesorder;
+	}
+	public Long getFactoryId() {
+		return factoryId;
+	}
+	public void setFactoryId(Long factoryId) {
+		this.factoryId = factoryId;
 	}
 	
 	

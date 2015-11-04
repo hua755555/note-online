@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.personal.dao.CarSpaceDao" >
+	
+	<sql id="default_column">
+    `car_space`.`id`,
+    `car_space`.`name`,
+    `car_space`.`year_id` as yearId,
+    `car_space`.`state` ,
+    `car_space`.`minprice` ,
+    `car_space`.`maxprice` ,
+    `car_space`.`gmt_created` as gmtCreated,
+    `car_space`.`gmt_modified` as gmtModified
+    </sql>
+	<insert id="insert" parameterType="com.personal.model.other.CarSpace" keyProperty="id">
+		insert into car_space (
+				`id`,
+			    `name`,
+			    `year_id`,
+			    `state` ,
+    			`minprice` ,
+    			`maxprice` ,
+			    `gmt_created`,
+			    `gmt_modified`)
+		values(
+		       #{id},
+			    #{name},
+			    #{yearId},
+			    #{state},
+			    #{minprice},
+			    #{maxprice},
+			    now(),now())
+	</insert>
+	
+	<select id="count" parameterType="com.personal.model.other.CarSpace" resultType="java.lang.Integer">
+		select count(*) as c
+		from car_space
+		where id=#{id}
+	</select>
+	
+</mapper>

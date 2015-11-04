@@ -18,6 +18,10 @@ PUBLIC "-//ibatis.apache.org//DTD Config 3.0//EN"
  		<mapper resource="sqlmap/UserAccountMapper.xml"/>
 		<mapper resource="sqlmap/UserProfileMapper.xml"/>
 		<mapper resource="sqlmap/CarBrandMapper.xml"/>
+		<mapper resource="sqlmap/CarSeriesMapper.xml"/>
+		<mapper resource="sqlmap/CarFactoryMapper.xml"/>
+		<mapper resource="sqlmap/CarYearMapper.xml"/>
+		<mapper resource="sqlmap/CarSpaceMapper.xml"/>
 	</mappers>
 
 </configuration>

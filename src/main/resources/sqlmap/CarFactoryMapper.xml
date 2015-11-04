@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.personal.dao.CarFactoryDao" >
+	
+	<sql id="default_column">
+    `car_series`.`id`,
+    `car_series`.`name`,
+    `car_series`.`brand_id` as brandId,
+    `car_series`.`firstletter`,
+    `car_series`.`gmt_created` as gmtCreated,
+    `car_series`.`gmt_modified` as gmtModified
+    </sql>
+	<insert id="insert" parameterType="com.personal.model.other.CarFactory" keyProperty="id">
+		insert into car_factory (
+				`id`,
+			    `name`,
+			    `brand_id`,
+			    `firstletter`,
+			    `gmt_created`,
+			    `gmt_modified`)
+		values(
+		       #{id},
+			    #{name},
+			    #{brandId},
+			    #{firstletter},
+			    now(),now())
+	</insert>
+	<select id="count" parameterType="com.personal.model.other.CarFactory"  resultType="java.lang.Integer">
+		select count(*) as c
+		from car_factory
+		where id=#{id}
+	</select>
+</mapper>

@@ -9,18 +9,16 @@ import com.personal.dao.CarSeriesDao;
 import com.personal.model.other.CarSeries;
 import com.personal.service.CarSeriesService;
 
-@Service("carBrandService")
+@Service("carSeriesService")
 public class CarSeriesServiceImpl implements CarSeriesService{
 	
 	@Autowired
 	private CarSeriesDao carSeriesDao;
-	public void save(List<CarSeries> series) {
-		if(series == null || series.size()==0){
-			return ;
-		}
-		for(CarSeries serie:series){
-			carSeriesDao.insert(serie);
-		}
+
+	@Override
+	public List<CarSeries> queryList() {
+		return carSeriesDao.getList();
 	}
+
 
 }
