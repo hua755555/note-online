@@ -134,7 +134,15 @@ public class CarController extends BaseController{
 		return resBuffer.toString();
 		}
 	
-	
+	@RequestMapping(method=RequestMethod.GET)
+	public void getBook(HttpServletRequest request,HttpServletResponse response,
+			@RequestBody List<CarBrand> brands){
+		System.out.println("hello world");
+		carBrandService.save(brands);
+		Long id=34l;
+		HttpRequestUtil.httpGet("http://www.autohome.com.cn/ashx/AjaxIndexCarFind.ashx?type=3&value="+id);
+//		com.personal.util.http.HttpRequestUtil.httpGet(url)
+	}
 	
 	public static void main(String[] args) {
 		Long id =140l;
