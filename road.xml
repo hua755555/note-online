@@ -1,0 +1,40 @@
+<Search>
+  <Summary serverTime="08月01日 10时35分" />
+  <Row roadName="浣纱路" roadLevel="2" currentSpeed="8.24" diff="-0.6" lastHourAvgSpeed="11.4" lastWeekAvgSpeed="11.4" color="red" />
+  <Row roadName="中山路" roadLevel="5" currentSpeed="11.87" diff="-2.8" lastHourAvgSpeed="13.1" lastWeekAvgSpeed="15.3" color="orange" />
+  <Row roadName="解放路" roadLevel="2" currentSpeed="12.97" diff="-4.0" lastHourAvgSpeed="17.3" lastWeekAvgSpeed="12.0" color="red" />
+  <Row roadName="湖墅路" roadLevel="2" currentSpeed="16.61" diff="-2.0" lastHourAvgSpeed="18.4" lastWeekAvgSpeed="15.2" color="orange" />
+  <Row roadName="文一路" roadLevel="2" currentSpeed="17.01" diff="-0.8" lastHourAvgSpeed="16.7" lastWeekAvgSpeed="16.6" color="orange" />
+  <Row roadName="文三路" roadLevel="2" currentSpeed="18.04" diff="-5.0" lastHourAvgSpeed="16.5" lastWeekAvgSpeed="20.7" color="yellow" />
+  <Row roadName="建国路" roadLevel="2" currentSpeed="18.10" diff="-1.0" lastHourAvgSpeed="19.0" lastWeekAvgSpeed="17.6" color="yellow" />
+  <Row roadName="天目山路" roadLevel="2" currentSpeed="19.10" diff="-1.8" lastHourAvgSpeed="17.7" lastWeekAvgSpeed="20.1" color="yellow" />
+  <Row roadName="黄龙路" roadLevel="2" currentSpeed="19.14" diff="0.4" lastHourAvgSpeed="18.4" lastWeekAvgSpeed="23.5" color="yellow" />
+  <Row roadName="杭大路" roadLevel="2" currentSpeed="19.50" diff="5.3" lastHourAvgSpeed="16.3" lastWeekAvgSpeed="20.8" color="yellow" />
+  <Row roadName="东新路" roadLevel="2" currentSpeed="19.84" diff="-0.7" lastHourAvgSpeed="20.9" lastWeekAvgSpeed="22.9" color="yellow" />
+  <Row roadName="上塘地面路" roadLevel="2" currentSpeed="19.99" diff="1.5" lastHourAvgSpeed="17.7" lastWeekAvgSpeed="19.7" color="yellow" />
+  <Row roadName="凤起路" roadLevel="2" currentSpeed="20.32" diff="-2.0" lastHourAvgSpeed="20.6" lastWeekAvgSpeed="15.6" color="yellow" />
+  <Row roadName="教工路" roadLevel="2" currentSpeed="20.44" diff="0.9" lastHourAvgSpeed="18.2" lastWeekAvgSpeed="17.9" color="yellow" />
+  <Row roadName="延安路" roadLevel="2" currentSpeed="20.62" diff="-0.5" lastHourAvgSpeed="22.2" lastWeekAvgSpeed="17.8" color="yellow" />
+  <Row roadName="体育场路" roadLevel="2" currentSpeed="20.81" diff="-1.2" lastHourAvgSpeed="20.8" lastWeekAvgSpeed="22.5" color="yellow" />
+  <Row roadName="曙光路" roadLevel="2" currentSpeed="20.89" diff="-0.2" lastHourAvgSpeed="16.8" lastWeekAvgSpeed="20.6" color="yellow" />
+  <Row roadName="庆春路" roadLevel="2" currentSpeed="21.01" diff="3.2" lastHourAvgSpeed="17.9" lastWeekAvgSpeed="12.2" color="yellow" />
+  <Row roadName="保俶路" roadLevel="2" currentSpeed="21.93" diff="-2.6" lastHourAvgSpeed="22.2" lastWeekAvgSpeed="22.9" color="yellow" />
+  <Row roadName="文二路" roadLevel="2" currentSpeed="21.94" diff="-0.4" lastHourAvgSpeed="23.8" lastWeekAvgSpeed="21.4" color="yellow" />
+  <Row roadName="西湖大道" roadLevel="2" currentSpeed="22.36" diff="1.5" lastHourAvgSpeed="22.1" lastWeekAvgSpeed="23.1" color="yellow" />
+  <Row roadName="环城西路" roadLevel="2" currentSpeed="22.68" diff="3.6" lastHourAvgSpeed="21.8" lastWeekAvgSpeed="21.8" color="yellow" />
+  <Row roadName="环城北路" roadLevel="2" currentSpeed="22.77" diff="-0.7" lastHourAvgSpeed="21.7" lastWeekAvgSpeed="20.1" color="yellow" />
+  <Row roadName="上塘高架路" roadLevel="1" currentSpeed="23.22" diff="-1.1" lastHourAvgSpeed="26.5" lastWeekAvgSpeed="19.2" color="orange" />
+  <Row roadName="环城东路" roadLevel="2" currentSpeed="23.47" diff="-3.3" lastHourAvgSpeed="23.7" lastWeekAvgSpeed="24.4" color="yellow" />
+  <Row roadName="江城路" roadLevel="2" currentSpeed="23.67" diff="-2.3" lastHourAvgSpeed="23.3" lastWeekAvgSpeed="22.7" color="yellow" />
+  <Row roadName="莫干山路" roadLevel="2" currentSpeed="24.74" diff="2.0" lastHourAvgSpeed="20.2" lastWeekAvgSpeed="20.1" color="yellow" />
+  <Row roadName="文晖路" roadLevel="2" currentSpeed="25.10" diff="0.3" lastHourAvgSpeed="25.1" lastWeekAvgSpeed="25.8" color="#30ff00" />
+  <Row roadName="潮王路" roadLevel="2" currentSpeed="25.11" diff="-0.1" lastHourAvgSpeed="20.8" lastWeekAvgSpeed="21.1" color="#30ff00" />
+  <Row roadName="中河地面路" roadLevel="2" currentSpeed="26.67" diff="0.2" lastHourAvgSpeed="28.4" lastWeekAvgSpeed="28.5" color="#30ff00" />
+  <Row roadName="绍兴路" roadLevel="2" currentSpeed="27.34" diff="3.4" lastHourAvgSpeed="24.0" lastWeekAvgSpeed="23.3" color="#30ff00" />
+  <Row roadName="清泰街" roadLevel="2" currentSpeed="28.08" diff="3.9" lastHourAvgSpeed="23.8" lastWeekAvgSpeed="25.1" color="#30ff00" />
+  <Row roadName="德胜地面路" roadLevel="2" currentSpeed="31.52" diff="1.6" lastHourAvgSpeed="27.3" lastWeekAvgSpeed="28.7" color="#30ff00" />
+  <Row roadName="湖滨隧道" roadLevel="2" currentSpeed="32.34" diff="-0.9" lastHourAvgSpeed="33.4" lastWeekAvgSpeed="33.9" color="#30ff00" />
+  <Row roadName="中河高架路" roadLevel="1" currentSpeed="34.20" diff="-0.3" lastHourAvgSpeed="38.4" lastWeekAvgSpeed="41.8" color="yellow" />
+  <Row roadName="德胜高架路" roadLevel="1" currentSpeed="52.37" diff="8.2" lastHourAvgSpeed="37.4" lastWeekAvgSpeed="44.4" color="green" />
+</Search>
+

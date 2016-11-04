@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.lujing.go.RoadConditionMapper" >
+  <resultMap id="BaseResultMap" type="com.lujing.go.model.RoadCondition" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="roadName" property="roadname" jdbcType="VARCHAR" />
+    <result column="roadLevel" property="roadlevel" jdbcType="TINYINT" />
+    <result column="currentSpeed" property="currentspeed" jdbcType="DOUBLE" />
+    <result column="diff" property="diff" jdbcType="DOUBLE" />
+    <result column="lastHourAvgSpeed" property="lasthouravgspeed" jdbcType="DOUBLE" />
+    <result column="lastWeekAvgSpeed" property="lastweekavgspeed" jdbcType="DOUBLE" />
+    <result column="color" property="color" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, roadName, roadLevel, currentSpeed, diff, lastHourAvgSpeed, lastWeekAvgSpeed, 
+    color
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from road_condition
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from road_condition
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.lujing.go.model.RoadCondition" >
+    insert into road_condition (id, roadName, roadLevel, 
+      currentSpeed, diff, lastHourAvgSpeed, 
+      lastWeekAvgSpeed, color)
+    values (#{id,jdbcType=BIGINT}, #{roadname,jdbcType=VARCHAR}, #{roadlevel,jdbcType=TINYINT}, 
+      #{currentspeed,jdbcType=DOUBLE}, #{diff,jdbcType=DOUBLE}, #{lasthouravgspeed,jdbcType=DOUBLE}, 
+      #{lastweekavgspeed,jdbcType=DOUBLE}, #{color,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.lujing.go.model.RoadCondition" >
+    insert into road_condition
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="roadname != null" >
+        roadName,
+      </if>
+      <if test="roadlevel != null" >
+        roadLevel,
+      </if>
+      <if test="currentspeed != null" >
+        currentSpeed,
+      </if>
+      <if test="diff != null" >
+        diff,
+      </if>
+      <if test="lasthouravgspeed != null" >
+        lastHourAvgSpeed,
+      </if>
+      <if test="lastweekavgspeed != null" >
+        lastWeekAvgSpeed,
+      </if>
+      <if test="color != null" >
+        color,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="roadname != null" >
+        #{roadname,jdbcType=VARCHAR},
+      </if>
+      <if test="roadlevel != null" >
+        #{roadlevel,jdbcType=TINYINT},
+      </if>
+      <if test="currentspeed != null" >
+        #{currentspeed,jdbcType=DOUBLE},
+      </if>
+      <if test="diff != null" >
+        #{diff,jdbcType=DOUBLE},
+      </if>
+      <if test="lasthouravgspeed != null" >
+        #{lasthouravgspeed,jdbcType=DOUBLE},
+      </if>
+      <if test="lastweekavgspeed != null" >
+        #{lastweekavgspeed,jdbcType=DOUBLE},
+      </if>
+      <if test="color != null" >
+        #{color,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.lujing.go.model.RoadCondition" >
+    update road_condition
+    <set >
+      <if test="roadname != null" >
+        roadName = #{roadname,jdbcType=VARCHAR},
+      </if>
+      <if test="roadlevel != null" >
+        roadLevel = #{roadlevel,jdbcType=TINYINT},
+      </if>
+      <if test="currentspeed != null" >
+        currentSpeed = #{currentspeed,jdbcType=DOUBLE},
+      </if>
+      <if test="diff != null" >
+        diff = #{diff,jdbcType=DOUBLE},
+      </if>
+      <if test="lasthouravgspeed != null" >
+        lastHourAvgSpeed = #{lasthouravgspeed,jdbcType=DOUBLE},
+      </if>
+      <if test="lastweekavgspeed != null" >
+        lastWeekAvgSpeed = #{lastweekavgspeed,jdbcType=DOUBLE},
+      </if>
+      <if test="color != null" >
+        color = #{color,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.lujing.go.model.RoadCondition" >
+    update road_condition
+    set roadName = #{roadname,jdbcType=VARCHAR},
+      roadLevel = #{roadlevel,jdbcType=TINYINT},
+      currentSpeed = #{currentspeed,jdbcType=DOUBLE},
+      diff = #{diff,jdbcType=DOUBLE},
+      lastHourAvgSpeed = #{lasthouravgspeed,jdbcType=DOUBLE},
+      lastWeekAvgSpeed = #{lastweekavgspeed,jdbcType=DOUBLE},
+      color = #{color,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

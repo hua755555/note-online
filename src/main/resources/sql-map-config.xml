@@ -22,6 +22,7 @@ PUBLIC "-//ibatis.apache.org//DTD Config 3.0//EN"
 		<mapper resource="sqlmap/CarFactoryMapper.xml"/>
 		<mapper resource="sqlmap/CarYearMapper.xml"/>
 		<mapper resource="sqlmap/CarSpaceMapper.xml"/>
+		<mapper resource="sqlmap/RoadCondittionMapper.xml"/>
 	</mappers>
 
 </configuration>
